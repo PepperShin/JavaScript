@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let grade = {
+        //     sum : 0,
+        //     avg : function(sum){
+        //         return sum / 3;
+        //     },
+        //     getGrade : function(kor, eng, math){
+        //         this.sum = kor + eng + math;
+        //         avg = this.avg(this.sum);
+
+        //         if(avg >= 90) {
+        //         document.write('수입니다');
+        //         }
+        //         else if(avg >= 80) {
+        //             document.write('우입니다');
+        //         }
+        //         else if(avg >= 70) {
+        //             document.write('미입니다');
+        //         }
+        //         else if(avg >= 60) {
+        //             document.write('양입니다');
+        //         }
+        //         else {
+        //             document.write('가입니다');
+        //         }
+        //     }
+        // }
+
+        // grade.getGrade(90, 90, 90);
+
+        // let rsp = Array('가위', '바위', '보');
+
+        // let user = prompt('가위 바위 보 중 하나를 입력하세요');
+        
+        // let com = Math.floor(Math.random() * 3);
+        // com = rsp[com];
+
+        // document.write('당신: ' + user + '<br>');
+        // document.write('컴퓨터: ' + com + '<br>');
+
+        // if(user == com){
+        //     document.write('비겼습니다');
+        // }
+        // else if(user == '가위'){
+        //     if(com == '바위'){
+        //         document.write('당신이 졌습니다');
+        //     }
+        //     else{
+        //         document.write('당신이 이겼습니다');
+        //     }
+        // }
+        // else if(user == '바위'){
+        //     if(com == '보'){
+        //         document.write('당신이 졌습니다');
+        //     }
+        //     else{
+        //         document.write('당신이 이겼습니다');
+        //     }
+        // }
+        // else if(user == '보'){
+        //     if(com == '가위'){
+        //         document.write('당신이 졌습니다');
+        //     }
+        //     else{
+        //         document.write('당신이 이겼습니다');
+        //     }
+        // }
+
+        setInterval(() =>{
+            let timer = new Date();
+            document.getElementById('clock').innerHTML = timer.getHours() + ':' + timer.getMinutes() + ':' + timer.getSeconds() + '<br>';
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>

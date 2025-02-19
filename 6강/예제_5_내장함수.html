@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let callback = function () {
+            alert('1초 후에 실행됨');
+        };
+
+        // setTimeout(callback, 1000); // ms 단위. 1000ms = 1초
+
+
+        // let intervalId = setInterval(() => {
+        //     document.write('1초 마다 실행됨<br>');
+        // }, 1000);
+
+        // clearInterval(intervalId); // interval 삭제
+        // callback = function(){
+        //     clearInterval(intervalId);
+        //     document.write('종료');
+        // }
+
+        // let timeout = setTimeout(callback, 1000 * 10);
+
+        setInterval(() =>{
+            let timer = new Date();
+            // document.write(timer.getHours() + ':' + timer.getMinutes() + ':' + timer.getSeconds() + '<br>');
+            document.getElementById('clock').innerHTML = timer.getHours() + ':' + timer.getMinutes() + ':' + timer.getSeconds() + '<br>';
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            함수 실행 순서
+        */
+
+        fun1();        //정상 실행
+        //fun2();        //오류 발생
+
+        // 명시(선언)적 함수 생성
+        function fun1(){
+            console.log("fun1 run!");
+        }
+
+        // 익명 함수 생성
+        var fun2 = function(){
+            console.log("fun2 run!");
+        }
+
+        fun2();        //정상 실행
+
+        // 익명 함수 형태로 세 숫자를 넣으면 평균이 나오도록 만들어라
+        let avg = function(){
+            let sum = 0;
+            for(let i = 0; i < arguments.length; i++){
+                sum += arguments[i];
+            }
+            return sum / arguments.length;
+        }
+
+        document.write(avg(90,60,60));
+
+        document.write('<br>');
+
+        // grade 함수를 할 경우 수우미양가 나오게 하기
+
+        function grade(avg){
+            if(avg >= 90) {
+                return '수';
+            }
+            else if(avg >= 80) {
+                return '우';
+            }
+            else if(avg >= 70) {
+                return '미';
+            }
+            else if(avg >= 60) {
+                return '양';
+            }
+            else {
+                return '가';
+            }
+        }
+
+        document.write(grade(avg(90,60,60)));
+
+        document.write('<hr>');
+
+        // 화살표 함수
+        let mulFunc = (num) => {
+            return num * 2;
+        };
+
+        document.write(mulFunc(10));
+
+        // 리턴값을 한줄로 표현 가능시 생략 가능
+        let mulFunc2 = (num) => num * num;
+
+        document.write(mulFunc2(10));
+        document.write('<hr>');
+
+        function gugudan1(num){
+            for(let i = 1; i < 10; i++){
+                document.write(`${num} x ${i} = ${num * i}, `);
+            }
+        }
+
+        let gugudan2 = function (num){
+            for(let i = 1; i < 10; i++){
+                document.write(`${num} x ${i} = ${num * i}, `);
+            }
+        }
+
+        let gugudan3 = (num) => {
+            for(let i = 1; i < 10; i++){
+                document.write(`${num} x ${i} = ${num * i}, `);
+            }
+        }
+        gugudan1(2);
+        document.write('<br>');
+        gugudan2(2);
+        document.write('<br>');
+        gugudan3(2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

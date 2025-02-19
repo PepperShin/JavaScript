@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = 100;
+
+        if(num > 50){
+            document.write('50보다 큽니다.');
+        }
+        
+        if(num < 50) {
+            document.write('50보다 작습니다.');
+        }
+        else {
+            document.write('50보다 이상입니다.');
+        }
+
+        if(num > 200) {
+            document.write('200보다 큽니다.');
+        }
+        else if(num > 150) {
+            document.write('150보다 큽니다.');
+        }
+        else {
+            document.write('150보다 작습니다.');
+        }
+
+        // 입력받을때는 string 형으로 받는다.
+        let kor = prompt('국어');
+        let eng = prompt('수학');
+        let math = prompt('영어');
+
+        // 형변환 Number은 소숫점 단위 유무로 int float 자동변환
+        let sum = parseInt(kor) + Number(eng) + Number(math);
+        let avg = sum / 3;
+
+        if(avg > 90) {
+            document.write('수');
+        }
+        else if(avg > 80) {
+            document.write('우');
+        }
+        else if(avg > 70) {
+            document.write('미');
+        }
+        else if(avg > 60) {
+            document.write('양');
+        }
+        else {
+            document.write('가');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

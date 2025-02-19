@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수 선언
+        // 명시적 함수 = 이름이 있는 함수
+        function add(n1, n2){
+            return n1 + n2;
+        }
+
+        // 함수 호출
+        document.write(add(1, 2) + '<br>');
+        document.write(add(10, 20) + '<br>');
+
+        // 익명 함수
+        let add2 = function(n1, n2){
+            return n1 + n2;
+        }
+
+        document.write(add2(1, 2) + '<br>');
+        document.write(add2(10, 20) + '<br>');
+
+        // 매개변수와 리턴값
+        function funXYZ(x, y, z) {
+            document.write('<br>');
+            document.write(x + '<br>');
+            document.write(y + '<br>');
+            document.write(z + '<br>');
+
+            let result = x * y * z;
+            return result;
+        }
+
+        let result = funXYZ(10, 20, 30);
+        document.write(result + '<br>');
+
+        result = funXYZ(1, 2, 3, 4);
+        // 파라미터 갯수와 일치시키지 않아도 에러가 나지 않는다.
+
+        document.write(result + '<br>');
+        // funXYZ(1, 2); 일때는 z의 값이 undefined 가 되어서 nan이 된다.(not a number)
+
+        // argument(전달값) 리턴.
+        function funExample() {
+            return arguments;
+        }
+
+        let varArr = funExample(1, 2, 3, 4, 5);
+
+        // 배열로 넘어간다.
+        console.log(varArr);
+        console.log(varArr.length);
+
+        function funExample2(){
+            let sum=0;
+
+            for (let i = 0; i < arguments.length; i++){
+                sum = sum + arguments[i];
+                document.write(arguments[i] + '<br>');
+            }
+            return sum;
+        }
+
+        varArr = funExample2(1, 2, 3, 4, 5);
+
+        console.log(varArr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
