@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>JavaScript</title>
+
+        <script>
+            window.onload = function(){
+                var sbmBtn = document.getElementById("sbmBtn");
+
+                // 로그인 유효성 검사
+                sbmBtn.onclick = function() {
+                    if(document.getElementById("uId").value == "") {
+                        // 인풋박스에서 가져오는 값은 getter 함수가 아닌 값 value로 가져온다.
+                        alert("user id blank!!");
+                    } else if(document.getElementById("uPw").value == "") {
+                        alert("user pw blank!!");
+                    } else {
+                        alert("login ok!!");
+                        document.getElementById("loginForm").submit();
+                    }
+                };
+
+                var resBtn = document.getElementById("resBtn");
+                resBtn.onclick = function() {
+                    alert("reset ok!!");
+                    document.getElementById("loginForm").reset();
+                };
+
+            }
+        </script>
+
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+
+        <form id="loginForm" action="http://www.google.com" method="post">
+            <!-- method="get"일때 https://www.google.com/?uId=abc&upw=123 로 보낸다. post 방식은 숨겨서 보낸다.-->
+            USER ID : <input id="uId" type="text" name="uId"><br>
+            USER PW : <input id="uPw" type="password" name="upw"><br>
+            <input id="sbmBtn" type="button" value="SUBMIT">
+            <input id="resBtn" type="button" value="RESET">
+        </form>
+
+    </body>
+
+</html>

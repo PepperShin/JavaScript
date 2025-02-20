@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    회원정보<br>
+    주소<input type="text" name="address1" id="address1" value="서울시 강남구"><br>
+    전화번호<input type="text" name="phone1" id="phone1" value="010-1234-1234"><br>
+    <hr>
+    동일<input type="checkbox" name="chk" onclick="check(this)">
+    <hr>
+    배송지 정보<br>
+    주소<input type="text" name="address2" id="address2" value=""><br>
+    전화번호<input type="text" name="phone2" id="phone2" value=""><br>
+
+    <hr>
+
+    <h1>1. +연산</h1>
+    <input type="text" name="v1" id="v1" value="10">+
+    <input type="text" name="v2" id="v2" value="20">=
+    <input type="text" name="result" id="result" value="">
+    <button onclick="sum()">연산</button><br>
+
+</body>
+<script>
+    // input값 복사 체크박스
+    // window.onload 함수 내부에 있어서 check가 정의가 되어있지 않다고 인식한다.
+    // 내부함수를 호출할 수 없다.
+    let add1 = document.getElementById("address1");
+    let phone1 = document.getElementById("phone1");
+
+    function check(checkbox){
+        let add2 = document.getElementById("address2");
+        let phone2 = document.getElementById("phone2");
+
+        console.log(checkbox);
+
+        add2.value = add1.value;
+        phone2.value = phone1.value;
+    }
+
+
+    //+연산, 총합구하기, 선택값 총합 구하기 구현
+    let v1 = document.getElementById("v1");
+    let v2 = document.getElementById("v2");
+
+    function sum(){
+        document.getElementById("result").value = parseInt(v1.value) + parseInt(v2.value);
+    }
+    
+</script>
+</html>

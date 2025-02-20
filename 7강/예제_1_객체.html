@@ -57,6 +57,36 @@
         // document.write(car.speed(20) + '<br>');
 
 
+        // 객체에 속성 추가 및 삭제
+        let objName = {
+            name : "홍길동",
+            nation : "korea",
+            gender : "men",
+            character : "good",
+        };
+
+        // 속성 추가
+        objName.talent = "singing";
+
+        // 수정
+        objName.talent ="fencing";
+
+        // 삭제
+        delete objName.talent;
+        console.log(objName);
+
+
+        // in, with 키워드
+        document.write('<hr>');
+        console.log('name' in objName); //true
+        console.log('age' in objName); //false
+
+        with (objName){
+            console.log(name);
+            console.log(nation);
+            console.log(gender);
+            console.log(character);
+        }
     </script>
 </head>
 <body>

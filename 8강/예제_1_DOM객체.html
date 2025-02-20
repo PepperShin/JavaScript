@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){ // 태그들을 메모리에 미리 올린다.
+            let tag = document.createElement('p'); // <p>
+            let text = document.createTextNode('Hello World'); // Hello World
+
+            tag.appendChild(text); // <p>Hello World</p>
+            document.body.appendChild(tag);
+
+            document.write('<hr>');
+
+            let imgTag = document.createElement('img');
+            // imgTag.src = 'img/logo.png';
+            // imgTag.width = '200';
+            // imgTag.height = '200';
+            // setter getter 함수를 사용하면 에러처리 되어있을 가능성 큼 + 정보은닉 용이.
+            imgTag.setAttribute('src', 'img/logo.png');
+            imgTag.setAttribute('width', '200');
+            imgTag.setAttribute('height', '200');
+            document.body.appendChild(imgTag); // body 태그 밑에 넣는다.
+
+                document.write('<hr>');
+
+            // innerHTML
+            let str = '';
+            str += '<h1>안녕하세요</h1>';
+            str += " <img src='./img/logo.png', ";
+            str += " width='170', height='67', tempData='logoImg'> ";
+
+            document.body.innerHTML = str;
+
+
+            document.body.innerHTML =
+                '<p id="hello">안녕하세요</p> <p class="hello2">Hello world</p> <p class="hello2">강아지 입니다</p>'
+
+
+            // // 선택자 : # id, . class
+            // let pTag = document.getElementById('hello');
+            // console.log(pTag);
+            // pTag.style.color = 'red';
+            // pTag.style.fontSize = '30px';
+            // pTag.innerHTML = '홍길동 입니다.';
+
+            // let pTag2 = document.getElementsByClassName('hello2');
+            // console.log(pTag2);
+            // pTag2[0].style.color = 'blue';
+            // pTag2[0].style.fontSize = '30px';
+            // pTag2[0].innerHTML = '홍길동 입니다.';
+            // pTag2[1].style.color = 'blue';
+            // pTag2[1].style.fontSize = '50px';
+            // pTag2[1].innerHTML = '저는 소년 입니다.';
+
+
+            // 쿼리 셀렉터
+            let selected = document.querySelector('#hello');
+            console.log(selected);
+            selected.style.color = 'red';
+            selected.style.fontSize = '30px';
+            selected.innerHTML = '홍길동 입니다.';
+
+            selected = document.querySelector('.hello2'); // 배열로 리턴
+            console.log(selected);
+
+            
+            // // 태그 삭제
+            // let tag1 = "";
+            // tag1 += "<p id='jsTitle'> javascript & node.js </p>";
+            // tag1 += "<img id='logoImg', src='./img/logo.png',";
+            // tag1 += "width='170', height='67', tempData='logoImg'>";
+
+            // document.body.innerHTML = tag1;
+            // let jsTitle = document.querySelector('#jsTitle');
+            // jsTitle.parentNode.removeChild(jsTitle);
+            // //또는 jsTitle.remove();
+
+            // let logoImg = document.querySelector('#logoImg');
+            // logoImg.remove();
+        };
+    </script>
+</head>
+<body>
+
+</body>
+<script>
+    // let tag = document.createElement('p'); // <p>
+    // let text = document.createTextNode('Hello World'); // Hello World
+
+    // tag.appendChild(text); // <p>Hello World</p>
+    // document.body.appendChild(tag);
+</script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수를 이용한 객체 생성
+        function createCar(name, color, speed){
+            let car = {
+                name : name,
+                color : color,
+                speed : speed,
+                run : function(power) {
+                    return this.speed * power;
+                }
+            };
+
+            return car;
+        }
+
+        let sonata = createCar('sonata', 'black', 100);
+        console.log(sonata);
+        console.log(sonata.run(2));
+
+        let bmw = createCar('bmw', 'white', 200);
+        console.log(bmw);
+
+        // 가위바위보
+        function createUser(name, rsp) {
+            let user = {
+                name : name,
+                rsp : rsp
+            };
+            
+            return user;
+        }
+
+        let user = createUser('유저', '가위');
+        let computer = createUser('유저', '바위');
+
+
+        // 생성자를 이용한 객체 생성
+        let date = new Date();
+        console.log(date);
+        console.log(date.getFullYear());
+        console.log(date.getMonth());
+
+        function Airplane(name, color, speed) {
+            console.log(arguments);
+            console.log(this);
+
+            this.name = name;
+            this.color = color;
+            this.speed = speed;
+            this.fly = function() {
+                return this.speed + 'fly!';
+            };
+        }
+
+        // 객체로 변환이 된다.
+        let boeing747 = new Airplane('boeing747', 'white', 1000);
+        console.log(typeof boeing747);
+        document.write(boeing747.name + '<br>');
+        document.write(boeing747.color + '<br>');
+        document.write(boeing747.speed + '<br>');
+        document.write(boeing747.fly() + '<br>');
+
+
+        function Grade(name, kor, eng, math) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+            this.total = function() {
+                return this.kor + this.eng + this.math;
+            };
+            this.avg = function() {
+                return this.total() / 3;
+            };
+        };
+
+        let hong = new Grade('홍길동', 100, 90, 80);
+        document.write(hong.total() + '<br>');
+        document.write(hong.avg() + '<br>');
+
+
+        let lee = new Grade('이순신', 90, 90, 80);
+        document.write(lee.total() + '<br>');
+        document.write(lee.avg() + '<br>');
+
+
+        // 클래스
+        class Car {
+            constructor(name, color, speed) {
+                this.name = name;
+                this.color = color;
+                this.speed = speed;
+            }
+            run() {
+                return this.speed + 'km/h';
+            }
+        }
+
+        let sm5 = new Car('sm5', 'white', 100);
+        console.log(sm5);
+
+        
+        //프로토타입
+        function GradeExample(name, kor, eng, math) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+            this.total = function() {
+                return this.kor + this.eng + this.math;
+            };
+            this.avg = function() {
+                return this.total() / 3;
+            };
+        }
+
+        let chulsuu = new GradeExample('철수', 100, 90, 80);
+        console.log(chulsuu);
+
+        function GradeProto(name, kor, eng, math) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        }
+
+        GradeProto.prototype.total = function() {
+            return this.kor + this.eng + this.math;
+        }
+
+        GradeProto.prototype.avg = function() {
+            return this.total() / 3;
+        }
+
+        let younghee = new GradeProto('영희', 90, 80, 70)
+        console.log(younghee);
+        console.log(younghee.total());
+        console.log(younghee.avg());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
