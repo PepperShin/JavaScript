@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 동기(순차적으로 실행)
+        function fun1(){
+            document.write('1번 입니다.' + '</br>')
+        }
+        function fun2(){
+            document.write('2번 입니다' + '</br>')
+        }
+        function fun3(){
+            document.write('3번 입니다' + '</br>')
+        }
+
+        fun1()
+        fun2()
+        fun3()
+
+        // 비동기(순서 상관없이 먼저 끝나는대로 실행)
+        function fun4(callback){
+            setTimeout(() => {
+                console.log('4번 입니다.')
+                callback()
+            }, 3000)
+        }
+
+        function fun5(){
+            console.log('5번 입니다.')
+        }
+        
+        fun4(fun5)
+
+        // 콜백 지옥
+        function callbackHell(){
+            setTimeout(() => {
+                console.log('6번 입니다.')
+
+                setTimeout(() => {
+                    console.log('7번 입니다.')
+
+                    setTimeout(() => {
+                        console.log('8번 입니다.')
+                    }, 1000)
+                }, 1000)
+            }, 1000)
+        }
+
+        callbackHell()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

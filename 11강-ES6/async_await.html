@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // async await
+        async function asyncFunc() {
+            return '어싱크 어웨잇'; // return값이 Promise
+        }
+
+        console.log(asyncFunc());
+
+        asyncFunc().then((response) => {
+            console.log(response);
+        });
+
+        // const asyncFunc2 = async () => {
+        //     return '어싱크 어웨잇';
+        // };
+
+        // asyncFunc2.then((response) => {
+        //     console.log(response);
+        // });
+
+        // 프로미스 객체를 반환 하는 함수
+        function delay(ms){
+            return new Promise((resolve)=>{
+                setTimeout(() => {
+                    console.log(`${ms} 밀리초가 지났습니다.`);
+                    resolve();
+                }, ms);
+            })
+        }
+
+        // async await 방식
+        async function main() {
+            await delay(1000);
+            await delay(2000);
+            const result = await Promise.resolve('끝');
+            console.log(result);
+        }
+
+        main();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
